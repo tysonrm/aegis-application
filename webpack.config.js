@@ -9,7 +9,7 @@ var serverConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath:
-      'https://api.github.com?owner=module-federation&repo=microlib-example&filedir=dist&branch=master',
+      'https://api.github.com?owner=module-federation&repo=microlib-example&filedir=dist&branch=cache',
     // "http://aegis.module-federation.org:8060",
     libraryTarget: 'commonjs'
   },
@@ -54,8 +54,7 @@ var serverConfig = {
       exposes: {
         './models': './src/domain',
         './adapters': './src/adapters',
-        './services': './src/services',
-        './event-bus': './src/services/event-bus'
+        './services': './src/services'
       },
       shared: {
         axios: {
