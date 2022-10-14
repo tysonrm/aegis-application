@@ -3,14 +3,14 @@
 /**
  * @type {import('./index').ModelSpecification}
  */
-export async function listSolarSystems (data) {
+export async function listSolarSystems(data) {
   console.log({ data })
   // return { SOLARSYSTEMS: await this.solarSystems() }
   const solarSystem = await this.fetchRelatedModel('SOLARSYSTEM')
-  console.log({ solarSystem })
+  console.log({ solarSystem, context: this.getContext('requestContext').getStore() })
   return { SOLARSYSTEMS: await solarSystem.systemsInGalaxy(data) }
 }
 
-export async function sendGalaticSignal (data) {
+export async function sendGalaticSignal(data) {
   console.log({ fn: sendGalaticSignal.name, o: 'Galaxy' })
 }
